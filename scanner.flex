@@ -29,9 +29,9 @@ main(int argc, char **argv){
 
     int tok;
 
-    while(tok = yylex())
+    while(tok = yylex()) // zero means EOF
     {   
-        printf("%d", tok); // zero means EOF
+        printf("%d", tok); 
 
         if(tok == NUMBER){
             printf( " = %d\n", yyval);
