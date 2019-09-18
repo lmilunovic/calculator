@@ -14,5 +14,5 @@
 "//".*      { /*Ignore comments*/ }
 \n          { return EOL;}
 [ \t]       { /* Just ignore whitespace*/ }
-.           { printf("Scanner error: Unrecognised character: %s\n", *yytext);}
+.           { printf("Scanner error: Unrecognised character: %c\n", *yytext);}
 %%
