@@ -8,6 +8,7 @@
 "*"         { return MUL;}
 "/"         { return DIV;}
 "|"         { return ABS;}
+"&"         { return AND;}
 [0-9]+      { yylval = atoi(yytext); return NUMBER;}
 0x[a-f0-9]+ { char* end; yylval = strtol(yytext, &end, 16); return NUMBER;}
 "("         { return OP;}

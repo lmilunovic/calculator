@@ -3,7 +3,7 @@
 %}
 
 %token NUMBER
-%token ADD SUB MUL DIV ABS
+%token ADD SUB MUL DIV ABS AND
 %token EOL
 %token OP CP
 
@@ -17,6 +17,8 @@ calclist: /*empty*/
 exp: factor
     | exp ADD factor  {$$ = $1 + $3;}
     | exp SUB factor  {$$ = $1 - $3;}
+    | exp ABS factor  {$$ = $1 | $3;}
+    | exp AND factor  {$$ = $1 & $3;}
     ;
 
 factor: term
