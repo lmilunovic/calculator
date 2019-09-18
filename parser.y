@@ -14,7 +14,7 @@ calclist: /*empty*/
     ;
 
 exp: factor
-    | exp ADD factor  {printf("$$ %d\n", $$);$$ = $1 + $3;}
+    | exp ADD factor  {$$ = $1 + $3;}
     | exp SUB factor  {$$ = $1 - $3;}
     ;
 
