@@ -7,13 +7,14 @@
 %token EOL
 
 %%
+
 calclist: /*empty*/
-    | calcilst exp EOL { printf("= %d\n", $1);}
+    | calclist exp EOL { printf("= %d\n", $2);}
     ;
 
 exp: factor
-    | exp ADD factor {$$ = $1 + $3;}
-    | ex SUB factor  {$$ = $1 - $3;}
+    | exp ADD factor  {$$ = $1 + $3;}
+    | exp SUB factor  {$$ = $1 - $3;}
     ;
 
 factor: term
@@ -23,7 +24,7 @@ factor: term
 
 term: NUMBER
     | ABS term {$$ = $2 >= 0? $2 : -$2;}
-
+    ;
 %%
 
 main(int argc, char** argv){
