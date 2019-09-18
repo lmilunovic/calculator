@@ -10,8 +10,8 @@
 %%
 
 calclist: /*empty*/
-    | calclist exp EOL { printf("= %d\n", $2);}
-    | calclist EOL
+    | calclist exp EOL { printf("= %d  (0x%04x) \n", $2, $2);}
+    | calclist EOL 
     ;
 
 exp: factor
